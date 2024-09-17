@@ -26,11 +26,13 @@ class UserState(StatesGroup):
     weight = State()
 
 
+
 @dp.message_handler(commands=['start'])
 async def start(message):
     await message.reply('Привет! Я бот помогающий твоему здоровью.'
                         '\nВыберите, что Вы хотите сделать:'
                         '\n',reply_markup=kb)
+
 
 
 
@@ -90,7 +92,7 @@ async def send_calories(message, state):
 
 
 
-
-
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
+
+
