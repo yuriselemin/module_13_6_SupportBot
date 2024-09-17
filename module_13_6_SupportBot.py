@@ -7,23 +7,23 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 api = '______'
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
+
 kb = ReplyKeyboardMarkup(resize_keyboard=True)
 button1 = KeyboardButton(text='Рассчитать')
 button2 = KeyboardButton(text='Информация')
 kb.add(button1)
 kb.add(button2)
 
-
 inline_kb = InlineKeyboardMarkup(row_width=2)
 calories_button = InlineKeyboardButton(text='Рассчитать норму калорий', callback_data='calories')
 formulas_button = InlineKeyboardButton(text='Формулы расчёта', callback_data='formulas')
 inline_kb.add(calories_button, formulas_button)
 
-
 class UserState(StatesGroup):
     age = State()
     growth = State()
     weight = State()
+
 
 
 
